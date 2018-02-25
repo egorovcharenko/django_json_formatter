@@ -15,11 +15,11 @@
             Input your JSON here
         </div>
         <div class="pane">
-            <form action="{% url 'formatter:index' %}" method="post">
+            <form action="{% url 'index' %}" method="post">
                 {% csrf_token %}
                 <textarea name="json_to_format"
                           id="json_to_format_id"
-                          ic-post-to="{% url 'formatter:format-submit-view' %}"
+                          ic-post-to="{% url 'format-submit-view' %}"
                           ic-trigger-on="keyup changed"
                           ic-trigger-delay="300ms"
                           ic-target="#format-result-container"
