@@ -1,0 +1,10 @@
+{% if errors %}
+    <div>Error: {{ errors }}</div>
+{% else %}
+    <style>
+        {{ styles }}
+    </style>
+    {% autoescape off %}
+        <div>{{ formatted_json|linebreaks }}</div>
+    {% endautoescape %}
+{% endif %}

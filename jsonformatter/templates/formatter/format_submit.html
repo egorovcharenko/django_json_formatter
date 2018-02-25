@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Free JSON Formatter Online</title>
+    <meta name="description" content="Instantly format your JSON output online!"/>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'formatter/styles.css' %}?rand=23423423"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://intercoolerreleases-leaddynocom.netdna-ssl.com/intercooler-1.2.1.min.js"></script>
+</head>
+
+<body>
+<div class="top">
+    <div class="formatter_left">
+        <div class="toolbar">
+            Input your JSON here
+        </div>
+        <div class="pane">
+            <form action="{% url 'formatter:index' %}" method="post">
+                {% csrf_token %}
+                <textarea name="json_to_format"
+                          id="json_to_format_id"
+                          ic-post-to="{% url 'formatter:format-submit-view' %}"
+                          ic-trigger-on="keyup changed"
+                          ic-trigger-delay="300ms"
+                          ic-target="#format-result-container"
+                          placeholder='{"a": [{"b": 123, "c": "32123"}, {"b": {"b": 123, "c": "32123"}, "c": "32123"}], "nested": {"b": 123, "c": "32123"}}'
+                ></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="formatter_right">
+        <div class="toolbar">
+            Formatted JSON:
+        </div>
+        <div class="pane" id="format-result-container">
+            {% include 'formatter/format_results.html' %}
+        </div>
+    </div>
+</div>
+<h1>Free JSON Formatter Online</h1>
+<div>Instantly format your JSON output online!</div>
+</body>
+</html>

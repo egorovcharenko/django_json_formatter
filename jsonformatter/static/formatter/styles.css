@@ -1,0 +1,37 @@
+.top {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+}
+
+.formatter_left, .formatter_right {
+    flex-grow: 1;
+    min-width: 300px;
+    height: 100%;
+}
+
+.formatter_left {
+}
+
+.formatter_left textarea {
+    width: 100%;
+    resize: none;
+    min-height: 500px;
+}
+
+.formatter_right {
+}
+
+.toolbar {
+    background-color: #bbbbbb;
+    padding: 3px;
+}
+
+span.indent {
+    display: inline-block;
+    width: 30px;
+}
+
+.pane, #json_to_format_id {
+    height: 100%;
+}
